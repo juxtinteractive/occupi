@@ -37,8 +37,7 @@
 <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
 <script>
 
-  var SENSOR_SERVER_URL = 'http://192.168.182.70/';
-
+  var SWITCH_SERVER_URL = 'http://bathroom-door-sensor.local';
   var OCCUPIED = 0;
   var VACANT = 1;
 
@@ -55,7 +54,7 @@
 
   var status;
   setInterval(function() {
-    $.get(SENSOR_SERVER_URL, function(data) {
+    $.get(SWITCH_SERVER_URL, function(data) {
       updateView(!!data.sensor_status);
     });
   }, 1000);
