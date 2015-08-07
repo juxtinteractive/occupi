@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+    .fullscreen {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 100vh;
+      background-size: cover;
+      background-position: center center;
+
+      opacity: 1;
+      transition: top 0.33s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .vacant { background-image: url(images/vacant.png); }
+    .vacant.is-hidden { top: -57px; }
+
+    .occupied { background-image: url(images/occupied.png); }
+    .occupied.is-hidden { top: 57px; }
+
+    .background { background-image: url(images/background.png); }
+  </style>
+</head>
+<body>
+
+<div class="fullscreen vacant"></div>
+<div class="fullscreen occupied is-hidden"></div>
+<div class="fullscreen background"></div>
+
+
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+<script>
+
+  var SENSOR_SERVER_URL = 'http://192.168.182.70/';
+
+  var OCCUPIED = 0;
+  var VACANT = 1;
+
+  function getStatus() {
+    return Math.round(Math.random());
+  }
+
+  function updateView(status) {
+    console.log(status);
+    $('.vacant').toggleClass('is-hidden', (status == VACANT));
+    $('.occupied').toggleClass('is-hidden', (status == OCCUPIED));
+  }
+
+
+  var status;
+  setInterval(function() {
+    $.get(SENSOR_SERVER_URL, function(data) {
+      updateView(!!data.sensor_status);
+    });
+  }, 1000);
+
+</script>
+
+</body>
+</html>
