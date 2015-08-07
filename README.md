@@ -1,4 +1,4 @@
-# Vacant
+# occupi
 
 
 Is the bathroom vacant? Find out by using a Raspberry Pi's GPIO to keep track of if the door is closed*, and display it on a web page.
