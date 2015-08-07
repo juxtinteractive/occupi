@@ -3,7 +3,7 @@
 
 Is the bathroom vacant? Find out by using a Raspberry Pi's GPIO to keep track of if the door is closed*, and display it on a web page.
 
-*\* Adapt to some other on/off state application by attaching a different type of switch.*
+\* *Adapt to some other on/off state application by attaching a different type of switch.*
 
 
 ## Raspberry Pi setup
@@ -27,9 +27,9 @@ Log in to Raspberry Pi.
 
 Install pip: `sudo apt-get python-pip`
 
-Clone this repo: `git clone https://github.com/juxtinteractive/vacant.git`. This will clone into a folder `vacant`.
+Clone this repo: `git clone https://github.com/juxtinteractive/occupi.git`. This will clone into a folder `occupi`.
 
-Install python dependencies: `sudo pip install -r /home/pi/vacant/rpi/requirements.txt`
+Install python dependencies: `sudo pip install -r /home/pi/occupi/rpi/requirements.txt`
 
 
 ## Client setup
