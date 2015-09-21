@@ -39,6 +39,7 @@ def get_status():
   # return json response
   return jsonify(retDict)
 
+app.url_for('status', filename='../client')
 
 # only start server if this file is run as main program
 if __name__ == '__main__':
